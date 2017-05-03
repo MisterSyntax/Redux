@@ -1,26 +1,31 @@
 Inspired by FLUX
-Flux is a unidirectional design pattern
+    Flux is a unidirectional design pattern
 
-Model - used to manage data within application
-    -can send data to multiple views
-View - presents object in user interface
-Controls- User interacts with a view, which can affet the data in the Model
+    Model - used to manage data within application
+        -can send data to multiple views
+    View - presents object in user interface
+    Controls- User interacts with a view, which can affet the data in the Model
 
-Flux - data flows in one direction
-    Action - describe what should change about the data
-    to
-    Dispatcher - sends actions to the appropriate store
-        -Can be multiple stores
-    to
-    Store - holds the data - updates and changes data
-    to
-    View - presents obect in user interface
-        - user interacts with the view which triggers an action
+    Flux - data flows in one direction
+        Action - describe what should change about the data
+        to
+        Dispatcher - sends actions to the appropriate store
+            -Can be multiple stores
+        to
+        Store - holds the data - updates and changes data
+        to
+        View - presents obect in user interface
+            - user interacts with the view which triggers an action
 
 Redux - can help you build applications which are easier to understand
     - It's the data container
-    Action -> Store(only 1 store) -> View 
+    PATTERN: ACTION -> STORE(only 1 store) -> VIEW 
     1 store - all of your data is in one place
         - "The single source of truth"
         - You have a state tree. A big object with sub-objects
     Modularity is maintained through functions to access different parts of the state tree
+
+IMPORTANT PARTS OF A REDUX APP 
+    1. ACTIONS which we store in constants.js
+    2. STATE which we store in initialState.json
+    3. REDUCERS (pure functions)

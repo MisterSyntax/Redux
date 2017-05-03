@@ -1,0 +1,2 @@
+Reducers - pure functions that are desgned to manage specific parts of your state object
+Your reducers will need to manage every key in the initialState.json file, and your reducers will be named the same thing as the keys

@@ -6,4 +6,5 @@
         SET_GOAL
         ADD_ERROR
         CLEAR_ERROR
-2. record all of these actions in a file called "constants"
+2. record all of these actions in a file called "constants.js"
+    -contains all of our action types as a js object

@@ -1,0 +1,21 @@
+1. Plan your app by determining Actions, and understanding state
+2. create a src folder
+    -Place actions in an object in constants.js
+    -Place state in initialState.json
+3. Nav to where you want to build your project
+    - "npm init" //creates your package.json file
+4. Install babel and babel command line tool
+    npm i babel-cli --save-dev
+5. Install latest features of ES6 spec for Babel
+    npm i babel-preset-latest --save-dev
+6. Install latest experiment features babel-preset-stage-0
+    npm i babel-preset-stage-0 --save-dev
+7. @ root create .babelrc
+    -in here you tell babel what presets to use e.g.
+    {"presets" : ["latest", "stage-0"]    }
+8. Create your index.js in src
+9. In package.json create "start" and "dev" in scripts
+    start": "./node_modules/.bin/babel-node ./src/index.js"
+    //can omite index.js since its main file in config
+10: Test config by running 
+    npm start
