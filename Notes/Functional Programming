@@ -1,0 +1,21 @@
+Functional Programming - a paradigm
+    - Pure functions - do not cause side-effects
+        -everything the function needs to operate is sent as arguments and a result is returned
+        - do not change any of their arguments or global variables
+    - Immutability - Do not want to change the objects in a functional application. We want to create new ones
+    - Composition - Ability to put functions together so one functions output is another functions input
+        - reducers are composed in store
+        -e.g. getPercent()
+            - this calls convertToDecimal()
+            - that value is used by decimalToPercent()
+            - that value is used by addPercentSign()
+            - that result is returned
+        import { compose } from "redux"
+
+        const getPercent = compose(
+            addPercentSign,
+            decimalToPercent,
+            convertToDecimal
+        )
+        
+        getPercent(1,4);

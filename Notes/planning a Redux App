@@ -1,0 +1,9 @@
+
+1. Identify all of your actions
+    e.g.
+        ADD_DAY
+        REMOVE_DAY
+        SET_GOAL
+        ADD_ERROR
+        CLEAR_ERROR
+2. record all of these actions in a file called "constants"
