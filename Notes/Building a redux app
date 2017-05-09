@@ -19,3 +19,59 @@
     //can omite index.js since its main file in config
 10: Test config by running 
     npm start
+
+====
+set up constants
+1. create a file in /src/ called constants.js
+2. this file exports an object with all of the actions that modify state with values of themselves e.g.
+    const constants = {
+        ADD_DAY: "ADD_DAY",
+        REMOVE_DAY: "REMOVE_DAY"
+    };
+
+    export default constants;
+
+====
+set up reducers
+1. create a store folder within /src/ and a reducers.js file in /src/store
+2. import constants into reducers.js
+
+==
+1. install redux
+    -npm i redux --save
+2. in reducers.js 
+    import { combineReducers } from 'redux'
+3. combine reducers to have same form as initialState.json and export them as default
+    e.g. 
+        {
+            reducer1,
+            reducer2,
+            reducer3,
+            nestedReducer: {
+                nestedReducer1,
+                nestedReducer2
+            }
+        }
+    is
+    export default combineReducers({
+        reducer1,
+        reducer2,
+        reducer3,
+        nestedReducer: combineReducers({
+            nestedReducer1,
+            nestedReducer2
+        })
+    })
+
+====
+use combined reducers in your index.js or wherever to mod state
+    import C from "./constants";
+    import appReducer from "./store/reducers";
+    import initialState from "./initialState.json";
+
+    let state = initialState;
+
+    state = appReducer(state, {
+        type: "ACTION_NAmE",
+        payload: payload_value
+    });

@@ -1,2 +1,25 @@
 Reducers - pure functions that are desgned to manage specific parts of your state object
 Your reducers will need to manage every key in the initialState.json file, and your reducers will be named the same thing as the keys
+you want to import your constants into the reducers.js file
+
+export a function for each of your reducers
+
+REDUCER TEMPLATE - don't modify state
+import C from "../src/constants"
+
+export const reducerName = (state=defaultVALUE, action) => {
+    /**don't need a switch if not multiple actions**/
+    switch(){
+        case C.ACTION_NAME1 : {
+            return newState;
+        }
+        case C.ADD_TO_STATE : {
+            return [
+                ...state,
+                action.payload
+            ];
+        }
+        default:
+            return state;
+    }
+}
