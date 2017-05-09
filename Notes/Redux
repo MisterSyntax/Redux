@@ -29,3 +29,4 @@ IMPORTANT PARTS OF A REDUX APP
     1. ACTIONS which we store in constants.js
     2. STATE which we store in initialState.json
     3. REDUCERS (pure functions)
+    
