@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node ./src/",
+    "start": "./node_modules/.bin/webpack-dev-server",
     "challenge-a": "./node_modules/.bin/babel-node ./Challenges/FETCH_RESORT_NAMES",
     "challenge-b": "./node_modules/.bin/babel-node ./Challenges/CANCEL_FETCHING",
     "challenge-c": "./node_modules/.bin/babel-node ./Challenges/CLEAR_SUGGESTIONS",
@@ -14,9 +14,14 @@
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^3.19.0"
+    "eslint": "^3.19.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "redux": "^3.6.0"

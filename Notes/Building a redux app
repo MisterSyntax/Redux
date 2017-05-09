@@ -75,3 +75,68 @@ use combined reducers in your index.js or wherever to mod state
         type: "ACTION_NAmE",
         payload: payload_value
     });
+
+====
+Create a static build with webpack
+1. nav to your directory
+2. install webpack
+    npm i webpack --save-dev
+3. install webpack-dev-server
+    npm i webpack-dev-server --save-dev
+4. set up loaders for transpiling
+    npm i babel-loader --save-dev
+    npm i json-loader --save-dev
+    npm i babel-core --save-dev
+5. create webpack.config.js at '/' 
+    contains 
+        entry - where to start
+        output - where to put file
+        devServer - tells webpack devServer how to operate
+        module - how to transpile code
+
+        const webpack = require("webpack");
+        const path = require("path");
+
+        module.exports = {
+            context: path.resolve(__dirname, "./src"),
+            entry: "./index.js",
+            output: {
+                path: path.resolve(__dirname, "./dist/assets"),
+                filename: "bundle.js",
+                publicPath: "/assets"
+            },
+            devServer: {
+                inline: true,
+                contentBase: path.join(__dirname, "./dist"),
+                port: 3000
+            },
+            module: {
+                loaders: [
+                    {
+                        test: /\.js$/,
+                        exclude: /(node_modules)/,
+                        loader: "babel-loader",
+                        options: {
+                            presets: ["latest", "stage-0"]
+                        }
+                    },
+                    {
+                        test: /.json$/,
+                        exclude: /(node_modules)/,
+                        loader: "json-loader"
+                    }
+                ]
+            }
+        };
+
+
+6. update package.json to point to webpack
+    "start": "./node_modules/.bin/webpack-dev-server"
+
+7. Create a Store
+    import appReducer from "./store/reducers";
+    ...
+    import { createStore } from "redux"
+    const store= createStore(appReducer);
+    //by usng the appReducer, our initial state will be created by appReducer calls
+    
