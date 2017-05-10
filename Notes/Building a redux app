@@ -140,3 +140,5 @@ Create a static build with webpack
     const store= createStore(appReducer);
     //by usng the appReducer, our initial state will be created by appReducer calls
     
+8. Create middleware - gives us power over how the action is dispatched
+    1. create /store/index.js
